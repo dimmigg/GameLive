@@ -1,0 +1,7 @@
+CREATE PROCEDURE [dbo].[SelectCountGames]
+AS
+	SELECT
+		COUNT(ID_GAME)
+	FROM
+		SAVE_GAMES
+GO

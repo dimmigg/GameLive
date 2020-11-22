@@ -1,0 +1,10 @@
+CREATE PROCEDURE [dbo].[InsertLogMapGame]
+	@ID_GAME	INT, 
+	@X			TINYINT,		
+	@Y			TINYINT,		
+	@ALIVE		BIT
+
+AS
+    INSERT INTO LOG_MAP_GAMES (ID_GAME, X, Y, ALIVE)
+    VALUES (@ID_GAME, @X, @Y, @ALIVE)   
+GO

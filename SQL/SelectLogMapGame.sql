@@ -1,0 +1,14 @@
+CREATE PROCEDURE [dbo].[SelectLogMapGame]
+    @ID_GAME int out
+
+AS
+	SELECT
+		X,
+		Y,
+		ALIVE
+	FROM
+		LOG_MAP_GAMES
+	WHERE
+	ID_GAME = @ID_GAME
+GO
+

@@ -1,0 +1,7 @@
+CREATE PROCEDURE [dbo].[SelectIdGames]
+AS
+	SELECT
+		ID_GAME
+	FROM
+		SAVE_GAMES
+GO
