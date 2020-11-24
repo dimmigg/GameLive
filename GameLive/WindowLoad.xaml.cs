@@ -27,7 +27,6 @@ namespace GameLive
                     if (datarowView != null)
                     {
                         DataRow dataRow = (DataRow)datarowView.Row;
-                        sql.DeletGameMap((Int32)dataRow.ItemArray[0]);
                         dataRow.Delete();
                     }
                 }

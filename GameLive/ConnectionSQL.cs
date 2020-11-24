@@ -21,7 +21,6 @@ namespace GameLive.Properties
         private string SqlSelectIdGames = "SelectIdGames";
         private string SqlSelectContGames = "SelectCountGames";
         private string SqlSelectDateGame = "SelectDateGame";
-        private string SqlDeleteMapGame = "DeleteMapGame";
         private string SqlSelectLogMapGame = "SelectLogMapGame";
 
         public ConnectionSQL()
@@ -232,29 +231,6 @@ namespace GameLive.Properties
             {
                 MessageBox.Show(ex.Message);
                 return result;
-            }
-            finally
-            {
-                if (connection != null)
-                    connection.Close();
-            }
-        }
-
-        public void DeletGameMap(int idGame)
-        {
-            SqlConnection connection = null;
-            try
-            {
-                connection = new SqlConnection(ConnectionString);
-                connection.Open();
-                SqlCommand command = new SqlCommand(SqlDeleteMapGame, connection);
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.Add(new SqlParameter { ParameterName = "@ID_GAME", Value = idGame });
-                command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
             finally
             {
